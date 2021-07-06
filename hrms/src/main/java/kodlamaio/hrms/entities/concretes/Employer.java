@@ -40,6 +40,5 @@ public class Employer extends User {
 	@Column(name="phone_number", nullable = false)
 	private String phoneNumber;
 	
-	@OneToMany(mappedBy = "employers")
-	private List<JobAdvertisement> jobAdvertisement; 
+
 }

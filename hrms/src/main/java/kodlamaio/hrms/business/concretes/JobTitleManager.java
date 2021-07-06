@@ -15,13 +15,13 @@ import kodlamaio.hrms.entities.concretes.JobTitle;
 
 @Service
 public class JobTitleManager implements JobTitleService{
-	private JobTitleDao jobPositionsDao;
+	private JobTitleDao jobTitleDao;
 	
 	
 	@Autowired
-	public JobTitleManager(JobTitleDao jobPositionsDao) {
+	public JobTitleManager(JobTitleDao jobTitleDao) {
 		super();
-		this.jobPositionsDao = jobPositionsDao;
+		this.jobTitleDao = jobTitleDao;
 	}
 
 
@@ -29,14 +29,14 @@ public class JobTitleManager implements JobTitleService{
 	@Override
 	public DataResult<List<JobTitle>> getAll() {
 		
-		return new SuccessDataResult<List<JobTitle>>(this.jobPositionsDao.findAll(),"Data Listelendi.");
+		return new SuccessDataResult<List<JobTitle>>(this.jobTitleDao.findAll(),"Data Listelendi.");
 	}
 
 
 
 	@Override
 	public Result add(JobTitle jobTitle) {
-		this.jobPositionsDao.save(jobTitle);
+		this.jobTitleDao.save(jobTitle);
 		return new SuccessResult("Job Title Eklendi");
 	}
 	
